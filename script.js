@@ -1,6 +1,8 @@
 
 let button = document.body.querySelector("button");
+let gameResult = document.getElementById("resultOfGame");
 
+let computerChoiceText = document.getElementById("computerChoice");
 
 // Function that will generate computers output 
 function getComputerOutput(){
@@ -15,6 +17,30 @@ function getComputerOutput(){
         giveText = "Scissors"
     }
 
-    button.innerText = giveText
+    computerChoiceText.innerText = "Computer choice: " + giveText
 }
 
+gameResult.innerText = "Game Result will go here"
+
+// pick winner between player and computer
+function decideWhoWon(){
+
+    let computerChoice = getComputerOutput();
+
+    let playerChoice = document.getElementById("playerChoice").value
+
+    // declaring tie
+    if(playerChoice == computerChoice){
+        giveText = "Tie! You both chose the same option!";
+    } else if(playerChoice == "Rock" && computerChoice == "Scissors"){
+        giveText = "You Won " + playerChoice + " Beats " + computerChoice;
+    } else if(playerChoice == "Scissors" && computerChoice == "Paper"){
+        giveText = "You Won " + playerChoice + " Beats " + computerChoice;
+    } else if(playerChoice == "Paper" && computerChoice == "Rock"){
+        giveText = "You Won " + playerChoice + " Beats " + computerChoice;
+    } else {
+        giveText = "You Lost " + playerChoice + " Loses to " + computerChoice;
+    }
+ 
+    gameResult.innerText = giveText
+}

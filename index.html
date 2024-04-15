@@ -9,7 +9,24 @@
 </head>
 <body>
 
-    <button onclick="getComputerOutput()"> Get Computer Output</button>
+    <!-- Tells choice of computer -->
+    <h3 id = "computerChoice">Computer Choice: </h3>
+
+    <!-- Players selection -->
+    <h3 id = "playerChoiceLabel">Player Choice: </h3>
+    <label for="playerChoice">Choose an option:</label>
+    <select id="playerChoice" name="playerChoice">
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+    </select>
+
+    <br>
+    <br>
     
+    <button onclick="decideWhoWon()"> Choose this option</button>
+
+    <!-- Winner of game -->
+    <h3 id = "resultOfGame"></h3>
 </body>
 </html>
