@@ -18,6 +18,8 @@ function getComputerOutput(){
     }
 
     computerChoiceText.innerText = "Computer choice: " + giveText
+    
+    return giveText
 }
 
 gameResult.innerText = "Game Result will go here"
